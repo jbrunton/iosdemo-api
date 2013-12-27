@@ -1,11 +1,9 @@
 require 'spec_helper'
 
 describe Task do
-  before(:each) do
-    @task = Task.create(:description => 'Some Task')
-  end
+  let (:task) { create(:task, :description => 'Some Task') }
   
   it "has a description" do
-    expect(@task.description).to eq('Some Task')
+    expect(task.description).to eq('Some Task')
   end
 end
