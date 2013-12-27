@@ -15,6 +15,11 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
+    
+    respond_to do |format|
+      format.html
+      format.json { render json: @task }
+    end
   end
 
   # GET /tasks/1/edit
